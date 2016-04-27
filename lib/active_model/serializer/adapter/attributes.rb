@@ -4,7 +4,7 @@ module ActiveModel
       class Attributes < Base
         def initialize(serializer, options = {})
           super
-          @include_tree = IncludeTree.from_include_args(options[:include] || '*')
+          @include_tree = IncludeTree.from_include_args(options[:include] || '**')
         end
 
         def serializable_hash(options = nil)
